@@ -7,26 +7,26 @@ function SingleRecipePage({recipes}) {
 
   const recipe = recipes.find(recipe => recipe.sys?.id === id);
 
-  const { title, shortdescription, image } = recipe.fields;
-  const imageUrl = image.fields.file.url;
+  
+  // const { title, shortdescription, image } = recipe.fields;
+  // const imageUrl = image.fields.file.url;
    
   
     
 
     return (
-
       
-      <div>
+        <div>
         <div className="container lg:flex">
       <div className="relative lg:w-1/2 mt-1 overflow-hidden bg-cover bg-no-repeat">
-       <img className="" alt="image of a pizza" src={image}/>
+       <img className="" alt="image of a pizza" src=""/>
        <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 transition duration-300 ease-in-out hover:opacity-70  flex justify-center items-center">
         <span className="text-center text-white text-6xl">Mamma mia!</span>
        </div>
       </div>
        <div className="second-column flex-column content-end pl-10">
-        <span> <h1 className=" md:mt-10 ml-2 title text-4xl"> {title}</h1></span>
-        <span className=" text-md"> <h2 class="ml-2"> {shortdescription}</h2></span>
+        <span> <h1 className=" md:mt-10 ml-2 title text-4xl"> titulo</h1></span>
+        <span className=" text-md"> <h2 class="ml-2"> short description</h2></span>
         <table className="mt-5 w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
@@ -79,7 +79,10 @@ function SingleRecipePage({recipes}) {
       </div>
     </div>
       </div>
+      
+
     )
-  }
+}
+
   
   export default SingleRecipePage

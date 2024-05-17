@@ -65,7 +65,7 @@ console.log(recipes)
           }
         >
           <Route path='/' element={<Homepage recipes={recipes} />} />
-          <Route path='/SingleRecipePage/:id' element={<SingleRecipePage recipes={recipes} />} />
+          <Route path='/recipe/:id' element={<SingleRecipePage recipes={recipes} />} />
         </Route>
         </Routes>
       </ContentfulProvider>

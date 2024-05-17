@@ -13,12 +13,13 @@ function OneCard({image, title, style, recipe}){
                     <span style={{ fontSize: '1.25rem', fontWeight: 'bold', marginLeft:"1.5rem"  }}>{title}</span>
                     
                   <div className="p-5">
-                        <Link to="" className="custom-button inline-flex items-center px-3 py-2 text-sm ">View Recipe</Link>
+                        <Link to="/" className="custom-button inline-flex items-center px-3 py-2 text-sm ">
                         
                             Read more
                             <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                             </svg>
+                        </Link>
                        
                    </div>
                 </div>

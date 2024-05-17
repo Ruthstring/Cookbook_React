@@ -8,7 +8,7 @@ const NavBar=()=>{
 
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1 ">
             <div className="flex content-center">
-                <img className="w-32"   src={Logo} alt="Our Logo" />
+            <Link to="/"><img className="w-32"   src={Logo} alt="Our Logo" /></Link>
             <div className="flex ml-20  md:visible">
             <ul className="flex self-center no-wrap space-x-8 hidden md:inline-flex font-semibold text-lg">
                 <li class="hover:text-purple-700">
