@@ -36,7 +36,7 @@ function App() {
     
    setRecipes(response.items);
   //  setRecipeLinks(links);
-   console.log(links);
+   
 
     } catch (error) {
       console.error('Error fetching content:', error);
