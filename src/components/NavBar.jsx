@@ -11,13 +11,13 @@ const NavBar=()=>{
             <Link to="/"><img className="w-32"   src={Logo} alt="Our Logo" /></Link>
             <div className="flex ml-20  md:visible">
             <ul className="flex self-center no-wrap space-x-8 hidden md:inline-flex font-semibold text-lg">
-                <li class="hover:text-purple-700">
+                <li class="hover:text-lime-500">
                     <Link to="/">Home </Link>
                 </li>
-                <li className="hover:text-purple-700">
+                <li className="hover:text-lime-500">
                     <a href="#">Recipees </a>
                 </li>
-                <li className="hover:text-purple-700">
+                <li className="hover:text-lime-500">
                     <a href="#">About</a>
                 </li>
              </ul>
