@@ -1,8 +1,16 @@
 import Logo from "../assets/logo.png"
 import {Link} from "react-router-dom"
+import {useState} from "react";
 
 
 const NavBar=()=>{
+
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+      };
+    
+
     return(
         <nav className="backgroundNav">
 
@@ -32,7 +40,7 @@ const NavBar=()=>{
             <span className="sr-only">Search</span>
           </button>
             
-            <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
+            <button onClick={toggleMenu} data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
               <span className="sr-only">Open main menu</span>
               <svg className="w-5 h-5 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -51,6 +59,26 @@ const NavBar=()=>{
            
             
          </div>
+
+         {isMenuOpen && (
+             <div className="md:hidden py-2 px-4">
+             {/* <input
+                 type="text"
+                 placeholder="Find recipe here"
+                 className="px-12 py-2 ml-12 rounded-md text-white focus:outline-none focus:bg-gray-500"
+             />
+             <button type="submit" className="mx-1 border border-green-500 bg-transparent text-green-500 hover:bg-green-500 hover:text-white rounded-md px-4 py-2">
+                 <i className="fas fa-search"></i>
+             </button> */}
+             <div className='nav-list'>
+                 <a href="/" className="block py-2 px-4 font-bold hover:bg-zinc-300">Home</a>
+                 <a href="/recipes" className="block py-2 px-4 font-bold hover:bg-zinc-300">Recipes</a>
+                 <a href="/about" className="block py-2 px-4 font-bold hover:bg-zinc-300">About</a>
+             </div>
+            
+             
+         </div>
+         )}
          </nav>
     )
 }
