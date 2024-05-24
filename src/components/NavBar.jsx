@@ -8,8 +8,18 @@ const NavBar=()=>{
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+        if(!isMenuOpen){
+            setIsSearchBarOpen(false); 
+        }
       };
-    
+
+    const [isSearchbarOpen, setIsSearchBarOpen] = useState(false);
+    const toggleSearchBar=()=>{
+        setIsSearchBarOpen(!isSearchbarOpen);
+        if(!isSearchbarOpen) {
+            setIsMenuOpen(false);
+        } 
+    }
 
     return(
         <nav className="backgroundNav">
@@ -33,7 +43,7 @@ const NavBar=()=>{
            </div>
            {/* <!-- here goes the trial button --> */}
            <div className="flex  lg:hidden mr-4">
-            <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
+            <button onClick={toggleSearchBar}  type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
             <svg className="w-5 h-5 mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
             </svg>
@@ -62,14 +72,7 @@ const NavBar=()=>{
 
          {isMenuOpen && (
              <div className="md:hidden py-2 px-4">
-             {/* <input
-                 type="text"
-                 placeholder="Find recipe here"
-                 className="px-12 py-2 ml-12 rounded-md text-white focus:outline-none focus:bg-gray-500"
-             />
-             <button type="submit" className="mx-1 border border-green-500 bg-transparent text-green-500 hover:bg-green-500 hover:text-white rounded-md px-4 py-2">
-                 <i className="fas fa-search"></i>
-             </button> */}
+            
              <div className='nav-list'>
                  <a href="/" className="block py-2 px-4 font-bold hover:bg-zinc-300">Home</a>
                  <a href="/recipes" className="block py-2 px-4 font-bold hover:bg-zinc-300">Recipes</a>
@@ -79,6 +82,23 @@ const NavBar=()=>{
              
          </div>
          )}
+
+         {isSearchbarOpen && (
+            <>
+                <div className="md:hidden">
+                <input
+                type="text"
+                placeholder="Search.."
+                className="md-hidden px-12 py-2 ml-12 rounded-md text-black focus:outline-none "
+                />
+                {/* <button type="submit" className="mx-1 border border-green-500 bg-transparent text-green-500 hover:bg-green-500 hover:text-white rounded-md px-4 py-2">
+                    <i className="fas fa-search"></i>
+                </button>  */}
+                </div>
+            </>
+         )
+
+         }
          </nav>
     )
 }
