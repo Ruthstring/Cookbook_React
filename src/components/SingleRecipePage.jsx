@@ -24,8 +24,8 @@ function SingleRecipePage({recipes}) {
       
         <div>
         <div className="container lg:flex">
-      <div className="relative lg:w-1/2 mt-1 overflow-hidden bg-cover bg-no-repeat">
-       <img className="" alt="image of the recipe" src={imageRecipe}/>
+      <div className="w-full  relative lg:w-1/2 mt-1 overflow-hidden bg-cover bg-no-repeat">
+       <img className="object-cover w-full h-full" alt="image of the recipe" src={imageRecipe}/>
        <div className="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 opacity-0 transition duration-300 ease-in-out hover:opacity-70  flex justify-center items-center">
         <span className="text-center text-white text-6xl">Mamma mia!</span>
        </div>
@@ -64,7 +64,10 @@ function SingleRecipePage({recipes}) {
              
           </tbody>
           </table>
-          <span className=" text-md"> <h2 class="ml-2"> {description}</h2></span>
+          <div className="descriptionBox">
+          <h2 className="recipe-title px-6  font-semibold"> STEPS </h2>
+          <div className=" text-sm px-6 py-3"> <h2> {description}</h2></div>
+          </div>
        </div>
        
        
